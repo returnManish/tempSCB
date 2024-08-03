@@ -10,10 +10,8 @@ import {
   TextField
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import DataContext from '../DataContext/DataContext';  // Import the DataContext
 
 const FidelityResults = () => {
-  const { data, loading } = useContext(DataContext);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -26,9 +24,7 @@ const FidelityResults = () => {
     alert('Feedback submitted!');
   };
 
-  if (loading) {
-    return <Typography>Loading...</Typography>;
-  }
+
 
   return (
     <Container component="main" maxWidth="md">
@@ -55,7 +51,7 @@ const FidelityResults = () => {
                 Our Recommendation
               </Typography>
               <Typography variant="body2" sx={{ marginTop: 1, lineHeight: '1.6' }}>
-                {data?.recommendationText || 'Our full-featured brokerage account has no account fees and no minimums to open. You can trade US stocks, exchange-traded funds (ETFs), and options online for $0 commissions*. Click on Learn More to check out the various options available for investment.'}
+                {'Our full-featured brokerage account has no account fees and no minimums to open. You can trade US stocks, exchange-traded funds (ETFs), and options online for $0 commissions*. Click on Learn More to check out the various options available for investment.'}
               </Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 3, marginTop: 1 }}>
                 <Button href="#" sx={{ color: 'blue', textDecoration: 'underline' }}>

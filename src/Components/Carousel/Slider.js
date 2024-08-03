@@ -2,8 +2,14 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Paper } from "@mui/material";
 import '../Home/Home.css';
+import { useNavigate } from "react-router-dom";
 
 function Slider() {
+  const navigate = useNavigate();
+  const NavigateToForm=()=>{
+    navigate('/financialDetails');
+  }
+
   return (
     <Carousel data-bs-theme="dark" controls={false}>
       <Carousel.Item>
@@ -21,7 +27,8 @@ function Slider() {
                 <h2>Invest today and plan for tomorrow</h2>
                 <p>We can help you get started.</p>
                 <div className="buttons">
-                  <button className="open-account">Start Here</button>
+                  <button onClick={NavigateToForm} 
+                  className="open-account">Start Here</button>
                 </div>
               </div>
             </div>
